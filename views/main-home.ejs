@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Home Page</title>
+</head>
+<body>
+  <h1>Welcome to our Blogging Tool!</h1>
+
+  <!-- Login Form -->
+  <form action="/login" method="post">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Login as Admin</button>
+</form>
+<button onclick="window.location.href='/guest'">Enter as Guest</button>
+  <script>
+    // JavaScript to toggle author login fields
+    const authorLogin = document.getElementById('authorLogin');
+    const guestLogin = document.getElementById('guestLogin');
+    const authorLoginFields = document.getElementById('authorLoginFields');
+
+    authorLogin.addEventListener('change', () => {
+      if (authorLogin.checked) {
+        authorLoginFields.style.display = 'block';
+      } else {
+        authorLoginFields.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

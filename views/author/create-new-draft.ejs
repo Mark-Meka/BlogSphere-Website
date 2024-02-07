@@ -1,0 +1,27 @@
+<!-- views/author/create-new-draft.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Draft</title>
+  <link rel="stylesheet" href="/style.css"> <!-- Include your CSS file -->
+</head>
+<body>
+  <div class="container" style="text-align: center;">
+    <h1>Create New Draft</h1>
+    <form action="/author/create-new-draft" method="post">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required></textarea>
+      </div>
+      <button class="btn-create-draft" type="submit">Create Draft</button>
+    </form>
+  </div>
+</body>
+</html>

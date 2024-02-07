@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Article</title>
+  <!-- Link to your custom CSS file for styling -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="animated fadeIn">Edit Article</h1>
+
+    <% if (article) { %>
+      <div class="article-details">
+        <h2><%= article.title %></h2>
+        <p>Created: <%= article.created_at %></p>
+        <p>Last Modified: <%= article.last_modified_at %></p>
+      </div>
+
+      <!-- Move the form inside a container div -->
+      <div class="form-container" >
+        <form style="text-align:center;" action="/author/edit-article/<%= article.id %>" method="post" class="edit-article-form">
+          <!-- Include a hidden input field for the article ID -->
+          <input type="hidden" name="articleId" value="<%= article.id %>">
+
+          <div class="form-group">
+            <label for="title" style="text-align:center;">Article Title:</label>
+            <input  type="text" id="title" name="title" value="<%= article.title %>" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="content">Article Content:</label>
+            <!-- Increase the rows attribute to adjust the size of the textarea -->
+            <textarea id="content" name="content" rows="30" cols="90" required><%= article.content %></textarea>
+          </div>
+
+          <!-- Apply the button style from your CSS file -->
+          <button type="submit" class="button">Save Changes</button>
+        </form>
+      </div>
+    <% } else { %>
+      <p>No article found for editing.</p>
+    <% } %>
+
+    <form action="/author/home" method="get" class="back-to-home-form">
+      <!-- Apply the button style from your CSS file -->
+      <button type="submit" class="button">Back to Author Home</button>
+    </form>
+  </div>
+</body>
+</html>

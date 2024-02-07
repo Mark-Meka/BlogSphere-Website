@@ -1,0 +1,73 @@
+<!-- Author Home HTML with Publish Button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Author Home</title>
+  <link rel="stylesheet" href="/style.css">
+  <!-- Add CSS for Animations -->
+  <link rel="stylesheet" href="/animations.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to the Author's Home Page</h1>
+      <!-- Link to create a new draft article -->
+      <a href="/author/create-new-draft" class="button">Create New Draft</a>
+    </header>
+
+    <!-- Published Articles -->
+    <section class="articles">
+      <h2>Published Articles</h2>
+      <ul class="article-list">
+        <% if (publishedArticles && publishedArticles.length > 0) { %>
+          <% publishedArticles.forEach(article => { %>
+            <li class="article">
+              <h3><%= article.title %></h3>
+              <!-- Display other information about the article -->
+              <p><%= article.content %></p>
+              <a href="/reader/article/<%= article.id %>" class="read-button">Read More</a>
+              <a href="/author/edit-article/<%= article.id %>" class="edit-button">Edit</a>
+              <form action="/author/delete-article/<%= article.id %>" method="post" style="display: inline;">
+                <button type="submit" class="delete-button">Delete</button>
+              </form>
+            </li>
+          <% }); %>
+        <% } else { %>
+          <li>No published articles available.</li>
+        <% } %>
+      </ul>
+    </section>
+
+    <!-- Draft Articles -->
+    <section class="articles">
+      <h2>Draft Articles</h2>
+      <ul class="article-list">
+        <% if (draftArticles && draftArticles.length > 0) { %>
+          <% draftArticles.forEach(article => { %>
+            <li class="article">
+              <h3><%= article.title %></h3>
+              <!-- Display other information about the article -->
+              <p><%= article.content %></p>
+              <a href="/reader/article/<%= article.id %>" class="read-button">Read More</a>
+              <a href="/author/edit-article/<%= article.id %>" class="edit-button">Edit</a>
+              <form action="/author/delete-article/<%= article.id %>" method="post" style="display: inline;">
+                <button type="submit" class="delete-button">Delete</button>
+              </form>
+              <!-- Button to publish drafted article -->
+              <form action="/author/publish-article/<%= article.id %>" method="post">
+                <button type="submit" class="publish-button">Publish</button>
+              </form>
+            </li>
+          <% }); %>
+        <% } else { %>
+          <li>No draft articles available.</li>
+        <% } %>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer or other footer content -->
+</body>
+</html>

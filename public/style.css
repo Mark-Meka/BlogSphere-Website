@@ -1,0 +1,425 @@
+/* Theme Colors */
+:root {
+  --primary-color: #4a69bd; /* A shade of blue */
+  --secondary-color: #6a89cc; /* A lighter shade of blue */
+  --text-color: #333;
+  --background-color: #f0f0f0;
+  --link-color: #333;
+  --link-hover-color: #555;
+  --border-color: #ccc;
+  --btn-bg-color: var(--primary-color); /* Background color for buttons */
+  --btn-text-color: white; /* Text color for buttons */
+  --article-bg-color: #fff; /* Background color for articles */
+  --article-text-color: var(--text-color); /* Text color for articles */
+}
+
+
+/* Reset some default styles */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  /* Align content in the center */
+}
+
+/* Style the navigation links */
+.navigation-links {
+  margin-top: 20px;
+}
+
+.navigation-links a {
+  display: inline-block;
+  margin: 10px; /* Add space between links */
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-links a:hover {
+  background-color: var(--secondary-color);
+}
+
+
+.article-title {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Style read more links */
+.read-more-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: var(--link-hover-color);
+}
+
+.article-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.article-item {
+  margin-bottom: 10px;
+}
+
+/* Style article details */
+.article-details {
+  background-color: var(--article-bg-color);
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.article-heading {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.article-content {
+  color: var(--article-text-color);
+}
+
+/* Style the "No article found" message */
+.no-article {
+  color: var(--text-color);
+}
+
+/* Style the back button */
+.btn-back-home {
+  padding: 10px 20px;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back-home:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* Add styles for the form container */
+.form-container {
+  background-color: #fff; /* Set background color */
+  padding-left: 20px;
+  padding-right: 40px; /* Add padding */
+  border-radius: 5px; /* Add border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+
+/* Add styles for form groups */
+.form-group {
+  margin-bottom: 20px; /* Add margin between form groups */
+}
+
+/* Style form labels */
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px; /* Add margin below labels */
+}
+
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--input-bg-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+button.btn-create-draft {
+  padding: 10px 20px;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-create-draft:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* Header styles */
+header {
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-top: 50px;
+}
+
+/* Navigation styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* List styles */
+.articles {
+  margin-top: 30px;
+}
+
+.article {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.article h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.article p {
+  color: var(--text-color);
+}
+
+/* Delete button styles */
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  
+}
+
+.publish-button{
+  background-color: rgb(212, 110, 25);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  
+}
+
+.publish-button:hover {
+  background-color: rgb(146, 62, 6);
+}
+
+
+.like-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+
+
+.edit-button {
+  background-color: rgb(29, 223, 103);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: rgb(0, 139, 42);
+}
+
+.read-button {
+  background-color: rgb(16, 86, 236);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-button:hover {
+  background-color: rgb(6, 39, 88);
+}
+
+
+/* Link styles */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+
+
+/* ================================================================================= */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.login-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: var(--article-bg-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+input[type="text"]{
+  padding: 10px;
+  padding-right:0px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+button.btn-create-draft, 
+button.read-button {
+    padding: 10px 20px;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-create-draft:hover, 
+button.read-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================================= */
+
+
+
+
+/* Animations */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+}

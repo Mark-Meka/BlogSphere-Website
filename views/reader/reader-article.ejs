@@ -1,0 +1,106 @@
+<!-- Reader Article HTML with Theme -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader Article</title>
+  <link rel="stylesheet" href="/style.css"> <!-- Include your CSS file -->
+</head>
+<body>
+
+<!-- _______________________________________________________ -->
+
+
+  <script>
+    function handleLike(articleId) {
+        // Create a new XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/article/" + articleId + "/like", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+    
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Handle response here
+                console.log('Article liked successfully');
+                // Optionally, update the like count on the page
+            }
+        };
+    
+        var data = JSON.stringify({"articleId": articleId});
+        xhr.send(data);
+    }
+    </script>
+
+<!-- _______________________________________________________ -->
+
+
+
+
+  <div class="container" style="text-align: center;">
+    <h1 class="article-title">Reader Article</h1>
+
+    <% if (article) { %>
+      <div class="article-details">
+        <h2 class="article-heading"><%= article.title %></h2>
+        <p class="article-content">Content: <%= article.content %></p>
+      </div>
+    <% } else { %>
+      <p class="no-article">No article found.</p>
+    <% } %>
+
+
+
+
+    <% if (article && article.datePublished) { %>
+      <% 
+      // Check if datePublished is already a Date object
+      let publishedDate = article.datePublished instanceof Date ? article.datePublished : new Date(article.datePublished);
+      %>
+      <p>Date Published: <%= publishedDate.toDateString() %></p>
+  <% } else { %>
+      <p>Date Published: Not available</p>
+  <% } %>
+  
+  <button id="likeButton" class="like-button">
+    <img id="likeImage" src="./assets/like.png" alt="Like">
+</button>
+
+<script>
+
+  document.getElementById('likeButton').addEventListener('click', function() {
+    var likeImage = document.getElementById('likeImage');
+    if (likeImage.getAttribute('src') === './assets/like.png') {
+        likeImage.src = './assets/liked.png';
+    } else {
+        likeImage.src = './assets/like.png';
+    }
+});
+</script>
+  
+  <form action="/article/<%= article.id %>/comment" method="post">
+    <input type="text" name="title" placeholder="Comment Title" required>
+    <textarea name="content" placeholder="Comment Content" required></textarea>
+    <button type="submit">Submit Comment</button>
+  </form>
+
+  </form>
+
+
+  <h3>Comments</h3>
+  <ul id="comments-list">
+    <% comments.forEach(comment => { %>
+      <li>
+        <strong><%= comment.title %></strong>
+        <p><%= comment.content %></p>
+      </li>
+    <% }); %>
+  </ul>
+
+
+  
+
+    
+  </div>
+</body>
+</html>

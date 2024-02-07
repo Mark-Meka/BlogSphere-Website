@@ -1,0 +1,48 @@
+<!-- Reader Home HTML with Theme -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reader Home</title>
+  <link rel="stylesheet" href="/style.css"> <!-- Include your CSS file -->
+</head>
+<body>
+  <div class="container" style="text-align:center;">
+    <h1 class="welcome-title">Welcome to the Reader's Home Page</h1>
+
+    <!-- Display Published Articles -->
+    <h2 class="section-title">Published Articles</h2>
+    <ul class="article-list">
+     <span style="font-weight:bold; font-size:20px;""> <% if (publishedArticles && publishedArticles.length > 0) { %>
+        <% publishedArticles.forEach(article => { %>
+          <li class="article-item">
+            <span class="article-title"><%= article.title %></span></span>
+            <!-- Link to read more about the article --><br>
+            <a class="read-more-link read-button" href="/reader/article/<%= article.id %>">Read More</a>
+          </li>
+        <% }); %>
+      <% } else { %>
+        <li class="no-article">No published articles available.</li>
+      <% } %>
+    </ul>
+
+    <!-- Display Saved Articles -->
+    <h2 class="section-title">Saved Articles</h2>
+    <ul class="article-list">
+      <% if (savedArticles && savedArticles.length > 0) { %>
+        <% savedArticles.forEach(article => { %>
+          <li class="article-item">
+            <span class="article-title"><%= article.title %></span>
+            <!-- Link to read more about the article -->
+            <a class="read-more-link" href="/reader/article/<%= article.id %>">Read More</a>
+          </li>
+        <% }); %>
+      <% } else { %>
+        <li class="no-article">No saved articles available.</li>
+      <% } %>
+    </ul>
+  </div>
+</body>
+</html>

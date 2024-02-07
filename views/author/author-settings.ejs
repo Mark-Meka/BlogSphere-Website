@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Author Settings</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Author Settings</h1>
+
+    <!-- Author settings form -->
+    <form action="/author/settings" method="post" class="author-settings-form">
+      <label for="blogTitle">Blog Title:</label>
+      <input type="text" id="blogTitle" name="blogTitle" value="<%= currentBlogTitle %>" required>
+
+      <label for="authorName">Author Name:</label>
+      <input type="text" id="authorName" name="authorName" value="<%= currentAuthorName %>" required>
+
+      <button type="submit">Save Settings</button>
+    </form>
+
+    <!-- Back to Author Home link -->
+    <a href="/author/home">Back to Author Home</a>
+  </div>
+</body>
+</html>
+
